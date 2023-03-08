@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/ecomerce-project.iml" filepath="$PROJECT_DIR$/.idea/ecomerce-project.iml" />
+      <module fileurl="file://$PROJECT_DIR$/ecommerce-notification/ecommerce-notification.iml" filepath="$PROJECT_DIR$/ecommerce-notification/ecommerce-notification.iml" />
+      <module fileurl="file://$PROJECT_DIR$/ecommerce-spring/ecommerce-spring.iml" filepath="$PROJECT_DIR$/ecommerce-spring/ecommerce-spring.iml" />
+    </modules>
+  </component>
+</project>

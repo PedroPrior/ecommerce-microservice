@@ -1,0 +1,10 @@
+global:
+  scrape_interval: 5s
+
+scrape_configs:
+  - job_name: "api-ecommerce-job"
+    metrics_path: "/actuator/prometheus"
+    static_configs:
+      - targets: ["17.0.12.17:8080"]
+        labels:
+          application: "api-ecommerce"
