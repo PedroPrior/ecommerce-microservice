@@ -5,7 +5,7 @@
 <hr>
 <h1> Visão geral: </h1>
 <p> Projeto desenvolvido com o intuito de fazer o back-end de um e-commerce, utilizando carrinho, autentição e autorização com usuários, 
-compras com clientes, atualizar pedido conforme o pagamento e a entrega, monitoramente de logs e metricas. 
+compras com clientes, atualizar pedido conforme o pagamento e a entrega, monitoramente de logs e métricas. 
 <h2> Instalação do projeto: </h2>
 <p> 1. Será necessário possuir o <a href="https://www.docker.com/">Docker</a> instalado na máquina.</p>
 <p> 2. Adicionar o banco de dados no <b>application.properties</b>.</p>
