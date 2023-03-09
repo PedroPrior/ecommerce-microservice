@@ -1,0 +1,12 @@
+global:
+  scrape_interval: 30s
+  scrape_timeout: 15s # Add a scrape timeout to prevent scraping hanging indefinitely
+
+scrape_configs:
+  - job_name: "api-ecommerce-job"
+    metrics_path: "/actuator/prometheus"
+    scheme: "http" # Specify the protocol explicitly to avoid using HTTPS by default
+    static_configs:
+      - targets: ["pop-os.local:8080"]
+        labels:
+          application: "api-ecommerce"

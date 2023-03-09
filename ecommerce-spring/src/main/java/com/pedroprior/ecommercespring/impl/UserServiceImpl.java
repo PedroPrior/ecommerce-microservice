@@ -7,7 +7,6 @@ import com.pedroprior.ecommercespring.repositories.UserRepository;
 import com.pedroprior.ecommercespring.services.UserService;
 import jakarta.transaction.Transactional;
 import lombok.extern.slf4j.Slf4j;
-import org.springframework.amqp.rabbit.core.RabbitTemplate;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.stereotype.Service;
@@ -21,14 +20,12 @@ public class UserServiceImpl implements UserService {
 
     private final UserRepository userRepository;
 
-    private final RabbitTemplate rabbitTemplate;
 
     private final UserAuthenticated userAuthenticated;
 
 
-    public UserServiceImpl(UserRepository userRepository, RabbitTemplate rabbitTemplate, UserAuthenticated userAuthenticated) {
+    public UserServiceImpl(UserRepository userRepository, UserAuthenticated userAuthenticated) {
         this.userRepository = userRepository;
-        this.rabbitTemplate = rabbitTemplate;
         this.userAuthenticated = userAuthenticated;
     }
 
@@ -60,8 +57,6 @@ public class UserServiceImpl implements UserService {
         }
         String roleName = getUserRole();
         UserDto userDto = new UserDto(user.getId(), user.getUsername(), user.getPassword(), user.getEmail(), roleName);
-        String routingKey = "user-queue";
-        rabbitTemplate.convertAndSend(routingKey, userDto);
         log.info("Authenticated user id: {}", userDto.getId());
         return userDto;
     }

@@ -4,6 +4,7 @@ package com.pedroprior.ecommercespring.dto;
 
 import com.pedroprior.ecommercespring.entities.Product;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 import org.springframework.format.annotation.DateTimeFormat;
 
 
@@ -11,6 +12,7 @@ import java.math.BigDecimal;
 import java.util.Date;
 
 @Data
+@NoArgsConstructor
 public class ProductDto {
 
     private Long id;

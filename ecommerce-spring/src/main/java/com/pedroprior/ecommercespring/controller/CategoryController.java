@@ -4,8 +4,8 @@ package com.pedroprior.ecommercespring.controller;
 import com.pedroprior.ecommercespring.dto.CategoryDto;
 import com.pedroprior.ecommercespring.entities.Category;
 import com.pedroprior.ecommercespring.services.CategoryService;
-import lombok.extern.slf4j.Slf4j;
 
+import org.springframework.amqp.rabbit.core.RabbitTemplate;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -15,8 +15,8 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/api/categories")
-@Slf4j
 public class CategoryController {
+
 
     private final CategoryService categoryService;
 
